@@ -1,0 +1,11 @@
+commit e619ba961eca1f6668fe829a659548b021677c8e
+Author: vlad.polkhovsky <vlad.polkhovsky@gmail.com>
+Date:   Mon Feb 15 00:38:01 2021 +0300
+
+    added new files
+
+commit 7a47d19953ffca3091ab5fd4d94896b382a9fe10
+Author: vlad.polkhovsky <vlad.polkhovsky@gmail.com>
+Date:   Mon Feb 15 00:36:06 2021 +0300
+
+    add .gitignore
