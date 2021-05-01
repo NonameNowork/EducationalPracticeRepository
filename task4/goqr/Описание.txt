@@ -1,0 +1,7 @@
+http://goqr.me/ - API предоставляющее возможность создавать и читать QR коды.
+
+Документация по созданию QR кода
+http://goqr.me/api/doc/create-qr-code/
+
+Документация по чтению QR кодв
+http://goqr.me/api/doc/read-qr-code/

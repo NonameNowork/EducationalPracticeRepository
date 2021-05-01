@@ -1,0 +1,17 @@
+Данное Api "https://newton.now.sh/" представляет из себя "Symbolic and Arithmetic Math Calculator".
+
+И запросы строятся следующим образом:
+
+@
+Send a GET request to newton with a url-encoded math expression and your preferred operation.
+Get back a JSON response with your problem solved.
+
+Send this:
+	https://newton.now.sh/api/v2/factor/x^2-1
+Get this:
+        {
+          "operation":"factor",
+          "expression":"x^2 - 1",
+          "result":"(x - 1) (x + 1)"
+        }      
+@

@@ -1,0 +1,9 @@
+API "HTTPCat" - "Cat for every HTTP Status."
+Название говорит само за себя.
+
+Запросы строятся следующим образом:
+@
+Usage:
+https://http.cat/[status_code]
+Note: If you need an extension at the end of the URL just add .jpg
+@
