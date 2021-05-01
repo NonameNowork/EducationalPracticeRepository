@@ -1,0 +1,14 @@
+html {
+    margin: 0;
+    background-color: white;
+}
+
+.content {
+    margin: auto;
+    max-width: 800px;
+    background-color: lightgray;
+}
+
+.content h1 {
+    text-align: center;
+}
