@@ -48,7 +48,7 @@ const adList = [
         createdAt: new Date(2020, 1, 12),
         link: "/ad-2-discription",
         vendor: "Dom.by",
-        hashTags: [ "varyBigDiscount", "sale" ],
+        hashTags: [ "varyBigDiscount", "sale", "false" ],
         discount: "35%",
         validUntil: new Date(2020, 3, 0)
     },
@@ -77,21 +77,22 @@ var Filters = (function() {
                 apply: function(e) {
                     var cfgProp = Object.getOwnPropertyNames(cfgObject)
                     var eProp = Object.getOwnPropertyNames(e);
+                    var correct = true;
                     for(var field in cfgProp) {
                         if (eProp.indexOf(cfgProp[field]) != -1) {
                             if (Array.isArray(e[cfgProp[field]]) && Array.isArray(cfgObject[cfgProp[field]])) {
-                                for (var field_arr in cfgObject[cfgProp[field]])
+                                for (var field_arr in cfgObject[cfgProp[field]]) {
                                   if (!e[cfgProp[field]].includes(cfgObject[cfgProp[field]][field_arr]))
-                                    return false;
-                                return true;
+                                    correct = false;
+                                }
                             } else {
-                               return e[cfgProp[field]] === cfgObject[cfgProp[field]];
+                               correct &= e[cfgProp[field]] === cfgObject[cfgProp[field]];
                             }
                         }
                         else
-                            return false;
+                            correct = false;
                     }
-                    return true;
+                    return correct;
                 }
             }
         }
@@ -202,7 +203,17 @@ var AdFunctional = (function(adsList) {
 console.log("step 1 'getAds(0, 5, { vendor:'Dom.by' })'"); 
 
 AdFunctional.getAds(0, 5, Filters.config({ vendor: "Dom.by" }).apply)
-    .forEach(x => console.log(x));
+
+console.log("filter start");
+
+AdFunctional.getAds(0, 5, Filters.config({ 
+        vendor: "Dom.by",
+        hashTags: [ "false" ]
+    }).apply)
+.forEach(x => console.log(x));
+
+console.log("filter end");
+
 
 console.log("step 2 'getAd('ad-2')'");
 AdFunctional.getAd("ad-2").forEach(x => console.log(x));
